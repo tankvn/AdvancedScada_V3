@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B22859AA-D659-4E98-A223-5C80E70FE878}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdvancedScada.Studio</RootNamespace>
+    <AssemblyName>AdvancedScada.Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\AdvancedScadaCS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\38.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Data.v19.1" />
+    <Reference Include="DevExpress.Utils.v19.1" />
+    <Reference Include="DevExpress.XtraBars.v19.1" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v19.1" />
+    <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\Lib\Lib\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OpcNetApi">
+      <HintPath>..\packages\OPC\OpcNetApi.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi.Com">
+      <HintPath>..\packages\OPC\OpcNetApi.Com.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcRcw.Comn">
+      <HintPath>..\packages\OPC\OpcRcw.Comn.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OpcRcw.Da">
+      <HintPath>..\packages\OPC\OpcRcw.Da.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.7.0\lib\net45\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.110.0\lib\net451\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.110.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.110.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\FormConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\FormConfiguration.Designer.cs">
+      <DependentUpon>FormConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\FormSQLServerUtils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DB\FormSQLServerUtils.Designer.cs">
+      <DependentUpon>FormSQLServerUtils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SQLFormCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DB\SQLFormCreate.Designer.cs">
+      <DependentUpon>SQLFormCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SQLite\SQLiteFormCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DB\SQLite\SQLiteFormCreate.Designer.cs">
+      <DependentUpon>SQLiteFormCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\UtilsTableSQLite.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkToSQL\AddColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkToSQL\AddColumn.Designer.cs">
+      <DependentUpon>AddColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkToSQL\AddDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkToSQL\AddDataBase.Designer.cs">
+      <DependentUpon>AddDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkToSQL\AddServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkToSQL\AddServer.Designer.cs">
+      <DependentUpon>AddServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkToSQL\AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkToSQL\AddTable.Designer.cs">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkToSQL\SQLMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkToSQL\SQLMaster.Designer.cs">
+      <DependentUpon>SQLMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\LSIS\LSISDataBlockForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\LSIS\LSISDataBlockForm.Designer.cs">
+      <DependentUpon>LSISDataBlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\LSIS\LSISTagForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\LSIS\LSISTagForm.Designer.cs">
+      <DependentUpon>LSISTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\LSIS\XUserChannelForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\LSIS\XUserChannelForm.Designer.cs">
+      <DependentUpon>XUserChannelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Modbus\ModbusChannelForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Modbus\ModbusChannelForm.Designer.cs">
+      <DependentUpon>ModbusChannelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Modbus\ModbusDataBlockForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Modbus\ModbusDataBlockForm.Designer.cs">
+      <DependentUpon>ModbusDataBlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Modbus\ModbusTagForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Modbus\ModbusTagForm.Designer.cs">
+      <DependentUpon>ModbusTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Panasonic\PanasonicChannelForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Panasonic\PanasonicChannelForm.Designer.cs">
+      <DependentUpon>PanasonicChannelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Panasonic\PanasonicDataBlockForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Panasonic\PanasonicDataBlockForm.Designer.cs">
+      <DependentUpon>PanasonicDataBlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Panasonic\PanasonicTagForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Panasonic\PanasonicTagForm.Designer.cs">
+      <DependentUpon>PanasonicTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Siemens\SiemensChannelForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Siemens\SiemensChannelForm.Designer.cs">
+      <DependentUpon>SiemensChannelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Siemens\SiemensDataBlockForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Siemens\SiemensDataBlockForm.Designer.cs">
+      <DependentUpon>SiemensDataBlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\IODriver\Siemens\SiemensTagForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\IODriver\Siemens\SiemensTagForm.Designer.cs">
+      <DependentUpon>SiemensTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\XChannelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\XChannelForm.Designer.cs">
+      <DependentUpon>XChannelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\XDataBlockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\XDataBlockForm.Designer.cs">
+      <DependentUpon>XDataBlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\XDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\XDeviceForm.Designer.cs">
+      <DependentUpon>XDeviceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\XSelectedDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\XSelectedDrivers.Designer.cs">
+      <DependentUpon>XSelectedDrivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\XTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\XTagForm.Designer.cs">
+      <DependentUpon>XTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\XTagManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\XTagManager.Designer.cs">
+      <DependentUpon>XTagManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudio.Designer.cs">
+      <DependentUpon>FormStudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IE\FormImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IE\FormImport.Designer.cs">
+      <DependentUpon>FormImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IE\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IE\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\XtraFormLogging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logging\XtraFormLogging.Designer.cs">
+      <DependentUpon>XtraFormLogging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs" />
+    <Compile Include="Monitor\PLC_MonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor\PLC_MonitorForm.designer.cs">
+      <DependentUpon>PLC_MonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor\PLC_MonitorForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor\PLC_MonitorForm2.Designer.cs">
+      <DependentUpon>PLC_MonitorForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor\WriteTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor\WriteTagForm.Designer.cs">
+      <DependentUpon>WriteTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\FormFrameMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service\FormFrameMonitor.designer.cs">
+      <DependentUpon>FormFrameMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\FormPCControllercs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service\FormPCControllercs.designer.cs">
+      <DependentUpon>FormPCControllercs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\FormServerUtils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service\FormServerUtils.Designer.cs">
+      <DependentUpon>FormServerUtils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServerUtilsGrid.cs" />
+    <Compile Include="Classic interface\FormStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classic interface\FormStudio.designer.cs">
+      <DependentUpon>FormStudio.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Config\FormConfiguration.resx">
+      <DependentUpon>FormConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DB\FormSQLServerUtils.resx">
+      <DependentUpon>FormSQLServerUtils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DB\SQLFormCreate.resx">
+      <DependentUpon>SQLFormCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DB\SQLite\SQLiteFormCreate.resx">
+      <DependentUpon>SQLiteFormCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkToSQL\AddColumn.resx">
+      <DependentUpon>AddColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkToSQL\AddDataBase.resx">
+      <DependentUpon>AddDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkToSQL\AddServer.resx">
+      <DependentUpon>AddServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkToSQL\AddTable.resx">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkToSQL\SQLMaster.resx">
+      <DependentUpon>SQLMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\LSIS\LSISDataBlockForm.resx">
+      <DependentUpon>LSISDataBlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\LSIS\LSISTagForm.resx">
+      <DependentUpon>LSISTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\LSIS\XUserChannelForm.resx">
+      <DependentUpon>XUserChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Modbus\ModbusChannelForm.resx">
+      <DependentUpon>ModbusChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Modbus\ModbusDataBlockForm.resx">
+      <DependentUpon>ModbusDataBlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Modbus\ModbusTagForm.resx">
+      <DependentUpon>ModbusTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Panasonic\PanasonicChannelForm.resx">
+      <DependentUpon>PanasonicChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Panasonic\PanasonicDataBlockForm.resx">
+      <DependentUpon>PanasonicDataBlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Panasonic\PanasonicTagForm.resx">
+      <DependentUpon>PanasonicTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Siemens\SiemensChannelForm.resx">
+      <DependentUpon>SiemensChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Siemens\SiemensDataBlockForm.resx">
+      <DependentUpon>SiemensDataBlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\IODriver\Siemens\SiemensTagForm.resx">
+      <DependentUpon>SiemensTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\XChannelForm.resx">
+      <DependentUpon>XChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\XDataBlockForm.resx">
+      <DependentUpon>XDataBlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\XDeviceForm.resx">
+      <DependentUpon>XDeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\XSelectedDrivers.resx">
+      <DependentUpon>XSelectedDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\XTagForm.resx">
+      <DependentUpon>XTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\XTagManager.resx">
+      <DependentUpon>XTagManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudio.resx">
+      <DependentUpon>FormStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IE\FormImport.resx">
+      <DependentUpon>FormImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IE\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logging\XtraFormLogging.resx">
+      <DependentUpon>XtraFormLogging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor\PLC_MonitorForm.resx">
+      <DependentUpon>PLC_MonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor\PLC_MonitorForm2.resx">
+      <DependentUpon>PLC_MonitorForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor\WriteTagForm.resx">
+      <DependentUpon>WriteTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Service\FormFrameMonitor.resx">
+      <DependentUpon>FormFrameMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service\FormPCControllercs.resx">
+      <DependentUpon>FormPCControllercs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service\FormServerUtils.resx">
+      <DependentUpon>FormServerUtils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classic interface\FormStudio.resx">
+      <DependentUpon>FormStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\38.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bitmap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconSetRedToBlack4_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconSetSigns3_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows_menubk_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdvancedScada.BaseService\BaseService.csproj">
+      <Project>{fe960c7a-e85b-48ed-9bca-9be1a6a1cb0b}</Project>
+      <Name>BaseService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdvancedScada.IBaseService\IBaseService.csproj">
+      <Project>{4ba1e9c3-f791-458c-b4f7-3b7943e8de10}</Project>
+      <Name>IBaseService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdvancedScada.ImagePicker\ImagePicker.csproj">
+      <Project>{5931d911-82c4-4c91-a32d-94d3dc870156}</Project>
+      <Name>ImagePicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drivers\AdvancedScada.DriverBase\DriverBase.csproj">
+      <Project>{0c4043a0-522d-456f-82c3-d086bd07ee27}</Project>
+      <Name>DriverBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdvancedScada.Management\Management.csproj">
+      <Project>{a6981d28-2360-4212-8eef-f78c117eb615}</Project>
+      <Name>Management</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdvancedScada.Utils\Utils.csproj">
+      <Project>{6892b89e-2cc0-4f7d-95d1-beaa1a21c607}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drivers\AdvancedScada.IODriver\IODriver.csproj">
+      <Project>{09B71D40-9C34-44F8-BC1B-1B3380EAD582}</Project>
+      <Name>IODriver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0000157_xbc-dn32ua_500.png" />
+    <None Include="Resources\515Oof-jXUL._AC_SY400_.jpg" />
+    <None Include="Resources\DVP10MC11T-300x300.jpg" />
+    <None Include="Resources\Modbus.png" />
+    <None Include="Resources\PLC SIEMENS.jpg" />
+    <None Include="Resources\plc_Cimon.png" />
+    <None Include="Resources\pp_cimon_plc.png" />
+    <None Include="Resources\OPC.png" />
+    <None Include="Resources\Panasonic.jpg" />
+    <None Include="Resources\img-wemx-designer-5.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
